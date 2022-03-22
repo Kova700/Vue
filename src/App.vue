@@ -1,24 +1,34 @@
+<!--template  = HTML
+    script    = JS
+    style     = CSS 
+    한 파일에 다 적는다.-->
+     
 <template>
 <div>
   <div>
     <img class="pic" src="./assets/vue1.jpg" alt="vue1">
     <p>책 제목 : vue.js 1 </p>
     <!-- vue 문법 {{}} = 변수값 가져옴-->
-    <p>저자    : {{author1}} </p> 
-    <p>가격    : {{prices[0]}} </p> 
+    <p>저자    : {{ author1 }} </p> 
+    <p>가격    : {{ prices[0] }} </p> 
   </div>
   <div>
     <img class="pic" src="./assets/vue2.jpg" alt="vue2">
     <p>책 제목 : vue.js 2 </p>
-    <p>저자    : {{author2}} </p> 
-    <p>가격    : {{prices[1]}} </p> 
+    <p>저자    : {{ author2 }} </p> 
+    <p>가격    : {{ prices[1] }} </p> 
   </div>
   <div>
     <img class="pic" src="./assets/vue3.jpg" alt="vue3">
-    <p>책 제목 : vue.js 3 </p>
-    <p>저자    : {{author3}} </p> 
-    <p>가격    : {{prices[2]}} </p> 
+    <p>책 제목 : vue.js 3 </p> 
+    <p>저자    : {{ author3 }} </p>  
+    <p>가격    : {{ prices[2] }} </p> 
   </div>
+
+  <!--Vue if문  -->
+  <p v-if=" Type=='A' ">AAAA</p>
+  <p v-else-if=" Type=='B' ">BBBB</p>
+  <p v-else>CCCC</p>
 
 </div>
 </template>
@@ -35,7 +45,8 @@ export default {
       author1 : "임꺽정",
       author2 : "홍길동2",
       author3 : "홍길동3",
-      prices  : [15000,25000,30000]
+      prices  : [15000,25000,30000],
+      Type : 'A'
     }
   }
 }
